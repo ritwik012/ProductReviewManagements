@@ -80,5 +80,13 @@ namespace ProductReviewManagement
                 Console.WriteLine("The Average Rating for ProductId {0} is {1}", data.ProductID, data.AverageRating);
             }
         }
+        public void RetrieveRecordsOfReviewMessage(List<ProductReview> productList, string reviewMessage)
+        {
+            var records = from Product in productList where Product.Review.Contains(reviewMessage) select Product;
+            foreach (var pro in records)
+            {
+                Console.WriteLine("ProductId : {0} \t UserId : {1} \t Rating : {2} \t Review : {3} \t IsLike : {4}", pro.ProductID, pro.UserID, pro.Rating, pro.Review, pro.IsLike);
+            }
+        }
     }
 }
