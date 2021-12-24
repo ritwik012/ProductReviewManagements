@@ -19,13 +19,13 @@ namespace ProductReviewManagement
                 new ProductReview() { ProductID = 4, UserID = 71, Rating = 5, Review = "Great", IsLike = true},
                 new ProductReview() { ProductID = 56, UserID = 76, Rating = 1, Review = "Bad", IsLike = false},
                 new ProductReview() { ProductID = 88, UserID = 32, Rating = 2, Review = "Poor", IsLike = false},
-                new ProductReview() { ProductID = 9, UserID = 47, Rating = 4, Review = "Good", IsLike = true},
+                new ProductReview() { ProductID = 9, UserID = 47, Rating = 4, Review = "Good", IsLike = true}
             };
             bool flag = true;
             Management management = new Management();
             while (flag)
             {
-                Console.WriteLine("Enter the Program that you want to be executed : \n 1. Displaying of Products List \n 2. Exit");
+                Console.WriteLine("Enter the Program that you want to be executed : \n 1. Displaying of Products List \n 2. Top 3 Rated Records \n 3. Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -33,6 +33,9 @@ namespace ProductReviewManagement
                         management.Display(productList);
                         break;
                     case 2:
+                        management.TopThreeRatingRecords(productList);
+                        break;
+                    case 3:
                         flag = false;
                         break;
                 }
