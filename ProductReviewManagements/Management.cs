@@ -19,5 +19,10 @@ namespace ProductReviewManagement
             var records = (from Product in productList orderby Product.Rating descending select Product).Take(3).ToList();
             Display(records);
         }
+        public void RetrieveRecordsUsingProductId(List<ProductReview> productList)
+        {
+            var records = (from Product in productList where (Product.ProductID == 1 || Product.ProductID == 4 || Product.ProductID == 9) && Product.Rating > 3 select Product).ToList();
+            Display(records);
+        }
     }
 }

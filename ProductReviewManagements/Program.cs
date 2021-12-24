@@ -25,7 +25,7 @@ namespace ProductReviewManagement
             Management management = new Management();
             while (flag)
             {
-                Console.WriteLine("Enter the Program that you want to be executed : \n 1. Displaying of Products List \n 2. Top 3 Rated Records \n 3. Exit");
+                Console.WriteLine("Enter the Program that you want to be executed : \n 1. Displaying of Products List \n 2. Top 3 Rated Records \n 3. Retrieve Records using Product ID of Rating > 3 \n 4. Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -36,6 +36,9 @@ namespace ProductReviewManagement
                         management.TopThreeRatingRecords(productList);
                         break;
                     case 3:
+                        management.RetrieveRecordsUsingProductId(productList);
+                        break;
+                    case 4:
                         flag = false;
                         break;
                 }
