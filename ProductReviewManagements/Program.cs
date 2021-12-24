@@ -25,7 +25,7 @@ namespace ProductReviewManagement
             Management management = new Management();
             while (flag)
             {
-                Console.WriteLine("Enter the Program that you want to be executed : \n 1. Displaying of Products List \n 2. Top 3 Rated Records \n 3. Retrieve Records using Product ID of Rating > 3 \n 4. Number of Records for Product ID \n 5. Retrieve ProductId and Review for all records \n 6. Skip Top 5 and Display \n 7. Retrieve ProductId and Review for all records \n 8. Exit");
+                Console.WriteLine("Enter the Program that you want to be executed : \n 1. Displaying of Products List \n 2. Top 3 Rated Records \n 3. Retrieve Records using Product ID of Rating > 3 \n 4. Number of Records for Product ID \n 5. Retrieve ProductId and Review for all records \n 6. Skip Top 5 and Display \n 7. Retrieve ProductId and Review for all records \n 8. Creation and Insertion of Values in DataTable \n 9. Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -51,6 +51,9 @@ namespace ProductReviewManagement
                         management.RetrieveOnlyProductIdAndReview(productList);
                         break;
                     case 8:
+                        management.ProductReviewsDataTable(productList);
+                        break;
+                    case 9:
                         flag = false;
                         break;
                 }
