@@ -88,5 +88,13 @@ namespace ProductReviewManagement
                 Console.WriteLine("ProductId : {0} \t UserId : {1} \t Rating : {2} \t Review : {3} \t IsLike : {4}", pro.ProductID, pro.UserID, pro.Rating, pro.Review, pro.IsLike);
             }
         }
+        public void RetrieveRecordsUsingUserId()
+        {
+            var productTable = from Product in this.dataTable.AsEnumerable() where Product.Field<int>("UserId") == 10 select Product;
+            foreach (DataRow Product in productTable)
+            {
+                Console.WriteLine("ProductId : " + Product.Field<int>("ProductId") + "\t" + "UserId : " + Product.Field<int>("UserId") + "\t" + "Rating : " + Product.Field<int>("Rating") + "\t" + "Review : " + Product.Field<string>("Review") + "\t" + "IsLike : " + Product.Field<bool>("IsLike"));
+            }
+        }
     }
 }
